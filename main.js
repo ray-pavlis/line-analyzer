@@ -15,8 +15,8 @@ function analyzeLine() {
     document.getElementById('length').innerHTML = getLength(pt1x, pt1y, pt2x, pt2y);
     document.getElementById('slope').innerHTML = getSlope(pt1x, pt1y, pt2x, pt2y);
     document.getElementById('description').innerHTML = getDescription(pt1x, pt1y, pt2x, pt2y);
-    document.getElementById('location-1').innerHTML = getPointLocationOne(pt1x, pt1y);
-    document.getElementById('location-2').innerHTML = getPointLocationTwo(pt2x, pt2y);
+    document.getElementById('location-1').innerHTML = getPointLocation(pt1x, pt1y);
+    document.getElementById('location-2').innerHTML = getPointLocation(pt2x, pt2y);
 }
 
 // Line Analyzer Functions (Write your solutions here... getLength is done for you)
@@ -50,36 +50,18 @@ function getDescription(x1, y1, x2, y2) {
     }
 }
 
-function getPointLocationOne(x1, y1) {
-    if (x1 === 0 && y1 === 0) {
+function getPointLocation(x, y) {
+    if (x === 0 && y === 0) {
         return "origin";
-    } else if (x1 === 0 && y1 !== 0) {
+    } else if (x === 0 && y !== 0) {
         return "x-axis";
-    } else if (y1 === 0 && x1 !== 0) {
+    } else if (y === 0 && x !== 0) {
         return "y-axis";
-    } else if (x1 > 0 && y1 > 0) {
+    } else if (x > 0 && y > 0) {
         return "quadrant 1";
-    } else if (x1 < 0 && y1 > 0) {
+    } else if (x < 0 && y > 0) {
         return "quadrant 2";
-    } else if (x1 < 0 && y1 < 0) {
-        return "quadrant 3";
-    } else {
-        return "quadrant 4";
-    }
-}
-
-function getPointLocationTwo(x2, y2) {
-    if (x2 === 0 && y2 === 0) {
-        return "origin";
-    } else if (x2 === 0 && y2 !== 0) {
-        return "x-axis";
-    } else if (y2 === 0 && x2 !== 0) {
-        return "y-axis";
-    } else if (x2 > 0 && y2 > 0) {
-        return "quadrant 1";
-    } else if (x2 < 0 && y2 > 0) {
-        return "quadrant 2";
-    } else if (x2 < 0 && y2 < 0) {
+    } else if (x < 0 && y < 0) {
         return "quadrant 3";
     } else {
         return "quadrant 4";
